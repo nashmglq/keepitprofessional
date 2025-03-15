@@ -1,8 +1,3 @@
-export const getPromt = async() =>{
-    const res = await fetch("http://localhost:5000/")
-    return res.json()
-}
-
 export const postPrompt = async (inputText) => {
     const res = await fetch("http://localhost:5000/", {
       method: "POST",
@@ -11,7 +6,7 @@ export const postPrompt = async (inputText) => {
     });
   
     if (!res.ok) {
-      throw new Error("Failed to generate professional text");
+      return "Error"
     }
   
     const response = await res.json();

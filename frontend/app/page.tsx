@@ -31,6 +31,7 @@ export default function Home() {
     },
     onError: () => {
       setHolder("Error generating text.");
+      setLoading(false)
     },
   });
 
