@@ -12,6 +12,7 @@ build/
 .env.development
 .env.production
 backend/.env
+backend/node_modules
 
 # Logs
 logs/
