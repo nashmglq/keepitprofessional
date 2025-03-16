@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import copy from "copy-to-clipboard";
-import { ClipboardIcon, ArrowPathIcon  } from "@heroicons/react/24/outline";
+import { ClipboardIcon, ArrowPathIcon } from "@heroicons/react/24/outline";
 import { postPrompt } from "../server/user";
 import { useMutation } from "@tanstack/react-query";
 import { toast, ToastContainer } from "react-toastify";
@@ -26,7 +26,7 @@ export default function Home() {
     mutationFn: postPrompt,
     onMutate: () => setLoading(true),
     onSuccess: (result) => {
-      if(!data) toast.error("Empty text", { position: "top-right", autoClose: 2000 });
+      if (!data) toast.error("Empty text", { position: "top-right", autoClose: 2000 });
 
       setLoading(false)
       setHolder(result);
@@ -48,10 +48,11 @@ export default function Home() {
 
         <div className="flex flex-col md:flex-row gap-4 w-full">
           <textarea
-            className="border border-gray-500 min-h-40 w-full p-4 rounded shadow-sm shadow-white"
+            className="border border-gray-500 min-h-40 w-full p-4 rounded-lg shadow-sm shadow-white"
             placeholder="Enter your text here..."
             onChange={(e) => setData(e.target.value)}
             value={data}
+            required
           ></textarea>
 
           <div className="relative w-full">
@@ -59,6 +60,7 @@ export default function Home() {
               className="border border-gray-500 min-h-40 w-full p-4 rounded-lg shadow-sm shadow-white"
               placeholder="Your professional text will appear here..."
               value={holder}
+              readOnly
             ></textarea>
 
             {holder ? (<div><button
@@ -69,7 +71,7 @@ export default function Home() {
               <ClipboardIcon className="h-6 w-6 text-white-700" />
             </button>
 
-            
+
               <button
                 onClick={clearFunc}
                 title="Clear"
