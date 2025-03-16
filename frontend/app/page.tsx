@@ -26,6 +26,8 @@ export default function Home() {
     mutationFn: postPrompt,
     onMutate: () => setLoading(true),
     onSuccess: (result) => {
+      if(!data) toast.error("Empty text", { position: "top-right", autoClose: 2000 });
+
       setLoading(false)
       setHolder(result);
     },
@@ -50,6 +52,7 @@ export default function Home() {
             placeholder="Enter your text here..."
             onChange={(e) => setData(e.target.value)}
             value={data}
+            required
           ></textarea>
 
           <div className="relative w-full">
@@ -57,7 +60,6 @@ export default function Home() {
               className="border border-gray-500 min-h-40 w-full p-4 rounded-lg shadow-sm shadow-white"
               placeholder="Your professional text will appear here..."
               value={holder}
-              readOnly
             ></textarea>
 
             {holder ? (<div><button
