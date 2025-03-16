@@ -52,7 +52,6 @@ export default function Home() {
             placeholder="Enter your text here..."
             onChange={(e) => setData(e.target.value)}
             value={data}
-            required
           ></textarea>
 
           <div className="relative w-full">
