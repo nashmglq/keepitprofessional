@@ -48,16 +48,16 @@ export default function Home() {
 
         <div className="flex flex-col md:flex-row gap-4 w-full">
           <textarea
-            className="border border-gray-500 min-h-40 w-full p-4 rounded-lg shadow-sm shadow-white"
+            className="border border-gray-500 h-40 w-full p-4 rounded-lg shadow-sm shadow-white"
             placeholder="Enter your text here..."
             onChange={(e) => setData(e.target.value)}
             value={data}
             required
           ></textarea>
 
-          <div className="relative w-full">
+          <div className="w-full relative">
             <textarea
-              className="border border-gray-500 min-h-40 w-full p-4 rounded-lg shadow-sm shadow-white"
+              className="border border-gray-500  h-40 w-full p-4 rounded-lg shadow-sm shadow-white"
               placeholder="Your professional text will appear here..."
               value={holder}
               readOnly
