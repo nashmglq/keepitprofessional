@@ -41,7 +41,7 @@ export default function Home() {
     <div>
       <ToastContainer /> {/* <- Add this inside return */}
       <div className="min-h-screen flex flex-col items-center justify-center px-4 w-full max-w-3xl mx-auto">
-        <h1 className="text-5xl font-bold mb-4 font-sans">KeepItProfessional</h1>
+        <h1 className="md:text-5xl sm: text-3xl font-bold mb-4 font-sans">KeepItProfessional</h1>
         <p className="text-lg mb-6 text-center max-w-lg font-sans">
           An AI-powered paraphraser that transforms your casual text into a polished, professional message.
         </p>
